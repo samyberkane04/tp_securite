@@ -7,12 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="login.php" method="post" >
-        <h2>LOGIN</h2>
-        <?php if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error'];?></p>
-
-        <?php }?>
+        
         <label>User name</label>
         <input type="text" name="uname" placeholder="User Name">
 
@@ -21,10 +16,14 @@
         <input type="password" name="password" placeholder="Password">
 
 
-        <button type="submit">Login</button>
-
-        <a href="signup.php">Inscription</a>
+        <button type="submit">Inscription</button>
 
     </form>
 </body>
 </html>
+
+<?php
+
+
+
+?>
