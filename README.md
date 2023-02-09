@@ -3,6 +3,10 @@
 nom: Berkane
 Prenom: Samy
 
+
+
+-Technologies : Php, Html, Mysql
+
 -Utilisation:
     1-il faudra lancer Xampp par la commande suivante:
      sudo /opt/lampp/./manager-linux-x64.run
