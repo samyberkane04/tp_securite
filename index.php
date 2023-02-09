@@ -7,23 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+
+    <img src="../images/lapin.jpg" /> 
+
+
     <form action="login.php" method="post" >
         <h2>LOGIN</h2>
         <?php if (isset($_GET['error'])) { ?>
             <p class="error"><?php echo $_GET['error'];?></p>
 
         <?php }?>
+        <br>
         <label>User name</label>
-        <input type="text" name="uname" placeholder="User Name">
+        <input type="text" name="uname" placeholder="User Name"><br>
 
 
         <label>Password</label>
-        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password" placeholder="Password"><br>
 
 
-        <button type="submit">Login</button>
+        <button type="submit">Login</button><br>
 
-        <a href="signup.php">Inscription</a>
+        <a href="signup.php">Inscription</a><br>
 
     </form>
 </body>

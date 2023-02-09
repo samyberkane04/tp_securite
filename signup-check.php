@@ -57,13 +57,16 @@ if(isset($_POST['uname']) && isset($_POST['password'])
             header("Location: signup.php?error=there are the same nameuser&$user_data");
         exit();    
         }else{
+            
+                echo "bravo";
+                $sql2 = "INSERT INTO id(username, name, password) VALUES ('$uname', '$name', '$pass')";
+                echo "bravo22";
 
+                $result2 = mysqli_query($conn, $sql2);
 
-        $sql2 = "INSERT INTO id(username,name,password) VALUES('$uname', '$name', '$pass')";
-        $result2 = mysqli_query($conn, $sql2);
-        if($result2){
-            header("Location: signup.php?success=your count is creat");
-            exit();    
+            if($result2){
+                header("Location: signup.php?success=your count is creat");
+                exit();    
 
         }else{
             header("Location: signup.php?error= errorjj j&$user_data");
