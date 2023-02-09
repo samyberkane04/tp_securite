@@ -19,7 +19,7 @@ if(isset($_POST['uname']) && isset($_POST['password'])
     $re_pass = validate($_POST['re_password']);
     $name = validate($_POST['name']);
 
-    $user_data = 'uname='. $uname.'&name='.$name;
+    $user_data = 'uname='. $uname. '&name='.$name;
 
     
 
@@ -40,33 +40,39 @@ if(isset($_POST['uname']) && isset($_POST['password'])
         exit();
     }
     
-    
+    else if($pass !== $re_pass){
+        header("Location: signup.php?error= the password is not the same&$user_data");
+        exit();
+    }
     else{
-        // $sql = "SELECT * FROM id WHERE username= '$uname' AND password= '$pass'";
 
-        // $result = mysqli_query($conn, $sql);
+        //hash the password
 
-        // if(mysqli_num_rows($result) === 1){
-        //     $row = mysqli_fetch_assoc($result);
-        //     if($row['username'] === $uname  && $row['password'] === $pass){
-        //         echo "logged in";
-        //     }
-            
-            
-        // }else{
-        //     header("Location: index.php?error=Incorrect username or password");
-        //     exit();
-    
-        // }
+        $pass = md5($pass);
+
+        $sql = "SELECT * FROM id WHERE username= '$uname'";
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result) > 0) {
+            header("Location: signup.php?error=there are the same nameuser&$user_data");
+        exit();    
+        }else{
+
+
+        $sql2 = "INSERT INTO id(username,name,password) VALUES('$uname', '$name', '$pass')";
+        $result2 = mysqli_query($conn, $sql2);
+        if($result2){
+            header("Location: signup.php?success=your count is creat");
+            exit();    
+
+        }else{
+            header("Location: signup.php?error= errorjj j&$user_data");
+            exit();    
+        }
+        }
     }
 
 }else{
-    // header("Location: signup.php");
-    // exit();
-}
-
-
-
-
-
-?>
+    header("Location: signup.php");
+    exit();
+}?>
