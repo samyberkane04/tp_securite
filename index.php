@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <img src="../images/lapin.jpg" /> 
+    <img src="./images/lapin.jpg" /> 
 
 
     <form action="login.php" method="post" >

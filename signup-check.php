@@ -48,7 +48,7 @@ if(isset($_POST['uname']) && isset($_POST['password'])
 
         //hash the password
 
-        $pass = md5($pass);
+        $pass = password_hash($pass, PASSWORD_BCRYPT);
 
         $sql = "SELECT * FROM id WHERE username= '$uname'";
         $result = mysqli_query($conn, $sql);

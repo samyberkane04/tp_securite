@@ -13,7 +13,7 @@ Prenom: Samy
 
     2-ensuite acceder a phpMyAdmin sur un navigateur : http://localhost/dashboard/
 
-    3-crée une base de données, nommé sa table "id" et crée un user (username, nanme, password)
+    3-crée une base de données, nommée sa table "id" et crée un user (username, nanme, password)
 
     4-lancer la page web : http://localhost/tp_securite/index.php
 
